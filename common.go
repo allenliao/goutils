@@ -11,6 +11,7 @@ func init() {
 
 }
 
+//要讓程式停下來才用的
 func CheckErr(err error) {
 	if err != nil {
 		panic(err)
