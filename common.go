@@ -7,8 +7,18 @@
 // @LicenseUrl http://www.apache.org/licenses/LICENSE-2.0.html
 package goutils
 
+import "github.com/astaxie/beego/logs"
+
 func init() {
 
+}
+
+var Logger *logs.BeeLogger
+
+func InitLogs() {
+	Logger = logs.NewLogger()
+	Logger.SetLogger(logs.AdapterFile, `{"filename":"common.log","maxsize":33554432}`) //32M
+	Logger.Debug("this is a debug message")
 }
 
 //要讓程式停下來才用的
